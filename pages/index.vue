@@ -89,5 +89,19 @@ export default {
     Logo,
     VuetifyLogo,
   },
+
+  async fetch() {
+    try {
+      const url = `${this.$nuxt.context.env.apiUrl}users`
+
+      const res = await this.$axios.$get(url)
+
+      console.log(res)
+
+    } catch (error) {
+      console.error('Error:', error)
+    }
+  },
+  fetchOnServer: false,
 }
 </script>
